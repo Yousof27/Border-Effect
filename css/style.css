@@ -1,0 +1,72 @@
+:root {
+    --mainColor: black;
+    --secondColor: rgb(140, 0, 255);
+    --thiredColor: rgb(0, 225, 255);
+}
+
+body {
+    background-color: var(--mainColor);
+    color: rgb(226, 226, 226);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    margin: 100px auto;
+    width: fit-content;
+}
+
+.logo {
+    width: 250px;
+    height: 300px;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: transparent;
+    text-shadow: 1px 1px 2px var(--mainColor);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 120%;
+    background-image: linear-gradient(var(--secondColor), var(--thiredColor));
+    z-index: -2;
+    animation: rotate 3s linear infinite running;
+}
+
+.logo:hover::after{
+    animation-play-state: paused;
+}
+
+@keyframes rotate{
+    from {
+        transform: rotate(-45deg);
+    }
+    to {
+        transform: rotate(315deg);
+    }
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    background-color: var(--mainColor);
+    inset: 5px;
+    border-radius: 50px;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+
